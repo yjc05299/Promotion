@@ -28,7 +28,7 @@ namespace PromotionEngine.Controller
       {
         // TODO promotion
         var amount = product.Amount;
-        order.Total += Prices.FirstOrDefault(o => o.ID == product.ID).Price * amount;
+        order.TotalPrice += Prices.FirstOrDefault(o => o.ID == product.ID).Price * amount;
       }
     }
   }

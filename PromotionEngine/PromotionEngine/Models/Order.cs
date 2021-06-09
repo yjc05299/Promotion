@@ -6,7 +6,7 @@ namespace PromotionEngine.Models
   public class Order
   {
     public IEnumerable<Product> Products { get; set; }
-    public decimal Total { get; set; }
+    public decimal TotalPrice { get; set; }
 
   }
 }

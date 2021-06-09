@@ -9,6 +9,37 @@ namespace UnitTestProject1
   [TestClass]
   public class UnitTestPromotionEngine
   {
+    // promotion
+    static  List<Promotion> promotions =
+     new List<Promotion> {
+        new Promotion
+        {
+          Products = new List<Product>
+          {
+            new Product { ID = "A", Amount = 3 }
+          },
+          TotalPrice = 130
+        },
+        new Promotion
+        {
+          Products = new List<Product>
+          {
+            new Product { ID = "B", Amount = 2 }
+          },
+          TotalPrice = 45
+        },
+        new Promotion
+        {
+          Products = new List<Product>
+          {
+            new Product { ID = "C", Amount = 1 },
+            new Product { ID = "D", Amount = 1 }
+          },
+          TotalPrice = 30
+        }
+     }; 
+
+    // prices
     static List<ProductPrice> prices = new List<ProductPrice>()
     {
       new ProductPrice {ID="A", Price = 50 },
@@ -18,7 +49,7 @@ namespace UnitTestProject1
 
     };
 
-    static EngineController engine = new EngineController(prices, new List<Promotion>());
+    static EngineController engine = new EngineController(prices, promotions);
 
     [TestMethod]
     public void Test_Scenario_A()
@@ -52,7 +83,7 @@ namespace UnitTestProject1
         Products = products
       };
       engine.CheckOut(order);
-      Assert.IsTrue(order.Total == 370);
+      Assert.IsTrue(order.TotalPrice == 370);
     }
 
     [TestMethod]
@@ -71,7 +102,7 @@ namespace UnitTestProject1
         Products = products
       };
       engine.CheckOut(order);
-      Assert.IsTrue(order.Total == 280);
+      Assert.IsTrue(order.TotalPrice == 280);
     }
   }
 }
