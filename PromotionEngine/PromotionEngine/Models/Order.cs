@@ -8,5 +8,9 @@ namespace PromotionEngine.Models
     public IEnumerable<Product> Products { get; set; }
     public decimal TotalPrice { get; set; }
 
+    public Order()
+    {
+
+    }
   }
 }

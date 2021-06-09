@@ -2,6 +2,9 @@
 
 namespace PromotionEngine.Models
 {
+  /// <summary>
+  /// Product
+  /// </summary>
   public class Product
   {
     public string ID { get; set; }
@@ -12,6 +15,9 @@ namespace PromotionEngine.Models
 
   }
 
+  /// <summary>
+  /// Product Price
+  /// </summary>
   public class ProductPrice
   {
     public string ID { get; set; }

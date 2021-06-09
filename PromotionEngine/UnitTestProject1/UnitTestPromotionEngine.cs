@@ -104,7 +104,9 @@ namespace UnitTestProject1
       engine.CheckOut(order);
       Assert.IsTrue(order.TotalPrice == 280);
     }
-
+    /// <summary>
+    /// For test errors with only single promotion
+    /// </summary>
 
     [TestMethod]
     public void Test_Scenario_D()
