@@ -40,16 +40,16 @@ namespace PromotionEngine.Models
     public void calPromotionRecursive(decimal leftover, IEnumerable<Product> matchedProducts, Order order)
     {
 
+      order.TotalPrice += TotalPrice;
       foreach (var p in Products)
       {
         var matchedProduct = matchedProducts.FirstOrDefault(_ => _.ID == p.ID);
         if (matchedProduct != null && matchedProduct.Amount >= p.Amount)
         {
           matchedProduct.Amount -= p.Amount;
-          order.TotalPrice += TotalPrice;
           leftover = matchedProduct.Amount;
         }
-        if(leftover > p.Amount)
+        if(leftover >= p.Amount)
         {
           calPromotionRecursive(leftover, matchedProducts, order);
         }

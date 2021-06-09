@@ -19,7 +19,7 @@ namespace PromotionEngine.Controller
     }
 
     /// <summary>
-    /// TODO Promotion
+    /// 
     /// </summary>
     /// <param name="order"></param>
     public void CheckOut(Order order)
@@ -42,8 +42,8 @@ namespace PromotionEngine.Controller
       // do the normal price
       foreach (var product in order.Products)
       {
-        var amount = (orderProducts.FirstOrDefault(x => x.ID == product.ID) ?? product).Amount;
-        order.TotalPrice += Prices.FirstOrDefault(o => o.ID == product.ID).Price * amount;
+        var amount = (orderProducts.FirstOrDefault(_ => _.ID == product.ID) ?? product).Amount;
+        order.TotalPrice += Prices.FirstOrDefault(_ => _.ID == product.ID).Price * amount;
       }
     }
 
