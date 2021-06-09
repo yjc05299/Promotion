@@ -18,7 +18,7 @@ namespace UnitTestProject1
 
     };
 
-    static EngineController engine = new EngineController(prices, new List<Order>());
+    static EngineController engine = new EngineController(prices, new List<Promotion>());
 
     [TestMethod]
     public void Test_Scenario_A()
