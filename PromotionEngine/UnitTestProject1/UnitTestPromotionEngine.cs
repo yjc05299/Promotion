@@ -105,5 +105,25 @@ namespace UnitTestProject1
       Assert.IsTrue(order.TotalPrice == 280);
     }
 
+
+    [TestMethod]
+    public void Test_Scenario_D()
+    {
+      var products = new List<Product>()
+      {
+        new Product{ ID ="A",Amount = 3},
+        new Product{ ID ="B",Amount = 1},
+        new Product{ ID ="C",Amount = 2},
+
+      };
+      var order = new Order()
+      {
+        Products = products
+      };
+      engine.CheckOut(order);
+      Assert.IsTrue(order.TotalPrice == 200);
+    }
+
+
   }
 }
